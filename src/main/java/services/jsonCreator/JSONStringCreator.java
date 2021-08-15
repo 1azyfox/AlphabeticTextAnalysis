@@ -7,16 +7,15 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 public class JSONStringCreator {
-    public static String createJSONContent(TreeMap<String,Long> hashMapOfCharacters) throws JsonProcessingException {
+    public static String createJSONContent(TreeMap<String,Long> treeMapOfCharacters) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         CompleteDataForJSON completeDataForJSOn = new CompleteDataForJSON();
-        for (String s : hashMapOfCharacters.keySet()) {
-            for (Long value : hashMapOfCharacters.values()) {
-                DataAboutOneCharacter dataAboutOneCharacter = new DataAboutOneCharacter();
-                completeDataForJSOn.setDataAboutOneCharacter(dataAboutOneCharacter);
-                dataAboutOneCharacter.setCharacter(s);
-                dataAboutOneCharacter.setFrequency(value);
-            }
+        for (String s : treeMapOfCharacters.keySet()) {
+            DataAboutOneCharacter dataAboutOneCharacter = new DataAboutOneCharacter();
+            completeDataForJSOn.setDataAboutOneCharacter(dataAboutOneCharacter);
+            dataAboutOneCharacter.setCharacter(s);
+            long value = treeMapOfCharacters.get(s);
+            dataAboutOneCharacter.setFrequency(value);
         }
         return objectMapper.writeValueAsString(completeDataForJSOn);
     }

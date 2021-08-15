@@ -14,7 +14,7 @@ public class Analyzer {
         return stringList.stream();
     }
 
-    public static Stream analyzeByCharacter(List<String> stringList) {
+    public static Stream<Character> analyzeByCharacter(List<String> stringList) {
         return analyzeByString(stringList)
                 .flatMap(s -> {
                     List<Character> list = new ArrayList();

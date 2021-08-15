@@ -11,8 +11,12 @@ public class JSONFileCreator {
         this.jsonFileName = jsonFileName;
     }
 
-    public void create(TreeMap<String,Long> treeMapOfCharacters) throws IOException {
+    public void create(TreeMap<String, Long> treeMapOfCharacters) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(jsonFileName));
-        bw.write(JSONStringCreator.createJSONContent(treeMapOfCharacters));
+        int i = treeMapOfCharacters.size() + 1;
+        while (i != 0) {
+            bw.write(JSONStringCreator.createJSONContent(treeMapOfCharacters));
+            i--;
+        }
     }
 }
