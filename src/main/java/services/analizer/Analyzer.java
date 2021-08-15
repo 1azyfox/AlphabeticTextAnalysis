@@ -23,6 +23,7 @@ public class Analyzer {
                     }
                     return list.stream();
                 })
-                .filter(c->c !=' ');
+                .filter(c->c !=' ')
+                .filter(character -> character != '-');
     }
 }

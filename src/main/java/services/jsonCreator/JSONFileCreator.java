@@ -2,6 +2,7 @@ package services.jsonCreator;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 public class JSONFileCreator {
     private String jsonFileName;
@@ -10,8 +11,8 @@ public class JSONFileCreator {
         this.jsonFileName = jsonFileName;
     }
 
-    public void create(HashMap<String,Long> hashMapOfCharacters) throws IOException {
+    public void create(TreeMap<String,Long> treeMapOfCharacters) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(jsonFileName));
-        bw.write(JSONStringCreator.createJSONContent(hashMapOfCharacters));
+        bw.write(JSONStringCreator.createJSONContent(treeMapOfCharacters));
     }
 }
