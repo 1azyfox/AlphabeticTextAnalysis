@@ -1,7 +1,10 @@
 package services.analizer;
 
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -11,7 +14,15 @@ public class Analyzer {
         return stringList.stream();
     }
 
-    public static IntStream analyzeByCharacter(List<String> stringList) {
-        return analyzeByString(stringList).flatMapToInt(String::chars);
+    public static Stream analyzeByCharacter(List<String> stringList) {
+        return analyzeByString(stringList)
+                .flatMap(s -> {
+                    List<Character> list = new ArrayList();
+                    for (int i=0;i<s.length();i++) {
+                        list.add(s.charAt(i));
+                    }
+                    return list.stream();
+                })
+                .filter(c->c !=' ');
     }
 }

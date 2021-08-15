@@ -11,12 +11,14 @@ import java.util.stream.Stream;
 public class FrequencyAnalyzer extends Analyzer {
 
     public static HashMap<String,Long> analyzeCharacters(List<String> stringList) {
-        return analyzeByCharacter(stringList)
+
+        return (HashMap<String, Long>) analyzeByCharacter(stringList)
                 .collect(
                         Collectors.toMap(
                                 c -> ((Character)c).toString(),
-                                c -> 1,
-                                (existing, replacement) -> existing+1
+                                c -> 1L,
+                                (existing, replacement) -> existing+1,
+                                HashMap::new
                         )
                 );
     }
