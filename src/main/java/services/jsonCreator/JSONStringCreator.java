@@ -12,7 +12,7 @@ public class JSONStringCreator {
         CompleteDataForJSON completeDataForJSOn = new CompleteDataForJSON();
         for (String s : treeMapOfCharacters.keySet()) {
             DataAboutOneCharacter dataAboutOneCharacter = new DataAboutOneCharacter();
-            completeDataForJSOn.setDataAboutOneCharacter(dataAboutOneCharacter);
+//            completeDataForJSOn.add(dataAboutOneCharacter);
             dataAboutOneCharacter.setCharacter(s);
             long value = treeMapOfCharacters.get(s);
             dataAboutOneCharacter.setFrequency(value);

@@ -4,20 +4,22 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class JSONFileCreator {
     private String jsonFileName;
+    ObjectMapper objectMapper = new ObjectMapper();
+
 
     public JSONFileCreator(String jsonFileName) {
         this.jsonFileName = jsonFileName;
     }
 
-    public void create(TreeMap<String, Long> treeMapOfCharacters) throws IOException {
+    public void create(Map<String, Long> treeMapOfCharacters) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(jsonFileName));
-        ObjectMapper objectMapper = new ObjectMapper();
         Treemap treemap = new Treemap();
-        treemap.treeMapOfCharacters = treeMapOfCharacters;
+//        treemap.treeMapOfCharacters = treeMapOfCharacters;
         objectMapper.writeValue(new File(jsonFileName),treemap);
 //        for (int i = 0; i < 10; i++) {
 //            bw.write(objectMapper.writeValueAsString(treemap));

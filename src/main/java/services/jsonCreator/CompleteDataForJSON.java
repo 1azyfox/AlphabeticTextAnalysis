@@ -1,15 +1,17 @@
 package services.jsonCreator;
 
+import java.util.Collection;
+
 public class CompleteDataForJSON {
-    private DataAboutOneCharacter dataAboutOneCharacter;
+    private Collection<DataAboutOneCharacter> dataAboutOneCharacter;
 
-    public DataAboutOneCharacter getDataAboutOneCharacter() {
-        return dataAboutOneCharacter;
-    }
-
-    public void setDataAboutOneCharacter(DataAboutOneCharacter dataAboutOneCharacter) {
-        this.dataAboutOneCharacter = dataAboutOneCharacter;
-    }
+//    public DataAboutOneCharacter getDataAboutOneCharacter() {
+//        return dataAboutOneCharacter;
+//    }
+//
+//    public void add(DataAboutOneCharacter dataAboutOneCharacter) {
+//        this.dataAboutOneCharacter = dataAboutOneCharacter;
+//    }
 }
 
 class DataAboutOneCharacter {
