@@ -1,5 +1,5 @@
 import services.analizer.FileFrequencyAnalyzer;
-import services.jsonCreator.JSONFileCreator;
+import services.json.JSONFileCreator;
 
 import java.io.IOException;
 
@@ -9,6 +9,8 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) {
         try {
+//            System.getenv();
+//            args
             String inputFileName = "input";
             String outputFileName = "output";
             FileFrequencyAnalyzer fileFrequencyAnalyzer = new FileFrequencyAnalyzer(inputFileName + ".txt");
